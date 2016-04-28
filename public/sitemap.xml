@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://force416.github.io/eric_profile/</loc>
+  <lastmod>2016-04-28T14:35:25+00:00</lastmod>
+</url>
+<url>
+  <loc>http://force416.github.io/eric_profile/archives/</loc>
+  <lastmod>2016-04-28T14:35:25+00:00</lastmod>
+</url>
+<url>
+  <loc>http://force416.github.io/eric_profile/about/</loc>
+  <lastmod>2016-04-28T14:35:25+00:00</lastmod>
+</url>
+<url>
+  <loc>http://force416.github.io/eric_profile/2016/04/28/ubuntu-nginx-ssl-setting/</loc>
+  <lastmod>2016-04-28T14:35:25+00:00</lastmod>
+</url>
+<url>
+  <loc>http://force416.github.io/eric_profile/2016/04/27/install-mysqldb-on-ubuntu/</loc>
+  <lastmod>2016-04-28T14:35:25+00:00</lastmod>
+</url>
+<url>
+  <loc>http://force416.github.io/eric_profile/2016/04/26/fb_comments/</loc>
+  <lastmod>2016-04-28T14:35:25+00:00</lastmod>
+</url>
+<url>
+  <loc>http://force416.github.io/eric_profile/2016/04/26/deployHexoToGithub/</loc>
+  <lastmod>2016-04-28T14:35:25+00:00</lastmod>
+</url>
+<url>
+  <loc>http://force416.github.io/eric_profile/categories/github/</loc>
+  <lastmod>2016-04-28T14:35:25+00:00</lastmod>
+</url>
+<url>
+  <loc>http://force416.github.io/eric_profile/categories/hexo/</loc>
+  <lastmod>2016-04-28T14:35:25+00:00</lastmod>
+</url>
+<url>
+  <loc>http://force416.github.io/eric_profile/categories/mysql/</loc>
+  <lastmod>2016-04-28T14:35:25+00:00</lastmod>
+</url>
+<url>
+  <loc>http://force416.github.io/eric_profile/tags/nginx/</loc>
+  <lastmod>2016-04-28T14:35:25+00:00</lastmod>
+</url>
+<url>
+  <loc>http://force416.github.io/eric_profile/tags/ubuntu/</loc>
+  <lastmod>2016-04-28T14:35:25+00:00</lastmod>
+</url>
+<url>
+  <loc>http://force416.github.io/eric_profile/tags/mysql/</loc>
+  <lastmod>2016-04-28T14:35:25+00:00</lastmod>
+</url>
+<url>
+  <loc>http://force416.github.io/eric_profile/tags/https/</loc>
+  <lastmod>2016-04-28T14:35:25+00:00</lastmod>
+</url>
+<url>
+  <loc>http://force416.github.io/eric_profile/tags/SSL/</loc>
+  <lastmod>2016-04-28T14:35:25+00:00</lastmod>
+</url>
+<url>
+  <loc>http://force416.github.io/eric_profile/tags/github/</loc>
+  <lastmod>2016-04-28T14:35:25+00:00</lastmod>
+</url>
+<url>
+  <loc>http://force416.github.io/eric_profile/tags/hexo/</loc>
+  <lastmod>2016-04-28T14:35:25+00:00</lastmod>
+</url>
+<url>
+  <loc>http://force416.github.io/eric_profile/tags/facebook-comments/</loc>
+  <lastmod>2016-04-28T14:35:25+00:00</lastmod>
+</url>
+</urlset>
