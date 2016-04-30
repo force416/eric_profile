@@ -112,7 +112,17 @@
 		 </div> <!-- alert -->
 	  		
 
-	  	  
+	  <h3 id="透過-apt-get-安裝"><a href="#透過-apt-get-安裝" class="headerlink" title="透過 apt-get 安裝"></a>透過 apt-get 安裝</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#更新apt-get 套件</span></span><br><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get upgrade</span><br><span class="line"></span><br><span class="line"><span class="comment">#安裝mysql</span></span><br><span class="line">$ sudo apt-get install mysql-server</span><br></pre></td></tr></table></figure>
+<h3 id="安裝-mysql-secure-installation"><a href="#安裝-mysql-secure-installation" class="headerlink" title="安裝 mysql_secure_installation"></a>安裝 mysql_secure_installation</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo mysql_secure_installation</span><br></pre></td></tr></table></figure>
+<h3 id="調整可連線的IP"><a href="#調整可連線的IP" class="headerlink" title="調整可連線的IP"></a>調整可連線的IP</h3><ul>
+<li>一般預設都是只能給本機(127.0.0.1)連線，如果要給外部的ip連線則需修改設定檔</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#/etc/mysql/my.cnf</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line">#允許任意ip連線</span><br><span class="line">bind_address = 0.0.0.0</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h3 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h3><ul>
+<li>安裝完mysql預設的port是3306</li>
+<li>如果ubuntu是aws 的 ec2 則需注意security group是否有開起mysql的port 3306</li>
+</ul>
+	  
 	</div>
 
 	<div>
@@ -194,7 +204,7 @@
 	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
 	   <div id="toc" class="toc collapse in">
 		   <span class="toc-title">Contents</span>
-			
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#透過-apt-get-安裝"><span class="toc-article-text">透過 apt-get 安裝</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#安裝-mysql-secure-installation"><span class="toc-article-text">安裝 mysql_secure_installation</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#調整可連線的IP"><span class="toc-article-text">調整可連線的IP</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#注意事項"><span class="toc-article-text">注意事項</span></a></li></ol>
 		</div>
 	
 	</div>

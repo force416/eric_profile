@@ -9,5 +9,5 @@ tags:
   - nginx
   - SSL
   - https
-categories:
+categories: 
 ---

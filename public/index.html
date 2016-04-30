@@ -152,7 +152,17 @@
   <div class="row">
 	
 	
-		
+		<h3 id="透過-apt-get-安裝"><a href="#透過-apt-get-安裝" class="headerlink" title="透過 apt-get 安裝"></a>透過 apt-get 安裝</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#更新apt-get 套件</span></span><br><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get upgrade</span><br><span class="line"></span><br><span class="line"><span class="comment">#安裝mysql</span></span><br><span class="line">$ sudo apt-get install mysql-server</span><br></pre></td></tr></table></figure>
+<h3 id="安裝-mysql-secure-installation"><a href="#安裝-mysql-secure-installation" class="headerlink" title="安裝 mysql_secure_installation"></a>安裝 mysql_secure_installation</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo mysql_secure_installation</span><br></pre></td></tr></table></figure>
+<h3 id="調整可連線的IP"><a href="#調整可連線的IP" class="headerlink" title="調整可連線的IP"></a>調整可連線的IP</h3><ul>
+<li>一般預設都是只能給本機(127.0.0.1)連線，如果要給外部的ip連線則需修改設定檔</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#/etc/mysql/my.cnf</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line">#允許任意ip連線</span><br><span class="line">bind_address = 0.0.0.0</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h3 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h3><ul>
+<li>安裝完mysql預設的port是3306</li>
+<li>如果ubuntu是aws 的 ec2 則需注意security group是否有開起mysql的port 3306</li>
+</ul>
+
 	
 	</div>
   <a type="button" href="/eric_profile/2016/04/27/install-mysqldb-on-ubuntu/#more" class="btn btn-default more">Read More</a>
@@ -286,21 +296,21 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/eric_profile/tags/https/">https<span>1</span></a></li>
-		
-			<li><a href="/eric_profile/tags/github/">github<span>1</span></a></li>
+			<li><a href="/eric_profile/tags/ubuntu/">ubuntu<span>2</span></a></li>
 		
 			<li><a href="/eric_profile/tags/facebook-comments/">facebook comments<span>1</span></a></li>
 		
+			<li><a href="/eric_profile/tags/SSL/">SSL<span>1</span></a></li>
+		
 			<li><a href="/eric_profile/tags/nginx/">nginx<span>1</span></a></li>
 		
-			<li><a href="/eric_profile/tags/mysql/">mysql<span>1</span></a></li>
+			<li><a href="/eric_profile/tags/github/">github<span>1</span></a></li>
+		
+			<li><a href="/eric_profile/tags/https/">https<span>1</span></a></li>
 		
 			<li><a href="/eric_profile/tags/hexo/">hexo<span>2</span></a></li>
 		
-			<li><a href="/eric_profile/tags/SSL/">SSL<span>1</span></a></li>
-		
-			<li><a href="/eric_profile/tags/ubuntu/">ubuntu<span>2</span></a></li>
+			<li><a href="/eric_profile/tags/mysql/">mysql<span>1</span></a></li>
 		
 		 
 		</ul>
