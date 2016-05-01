@@ -1,4 +1,4 @@
-slogan: "You are the JavaScript in my Html."
+slogan: "The more I learn, the more I realize how much I don't know."
 
 menu:
   - title: Archives
@@ -51,7 +51,7 @@ widgets:
 - recent_posts
 - links
 
-rss: 
+rss:
 fancybox: true
 favicon: favicon.png
 duoshuo_shortname:
