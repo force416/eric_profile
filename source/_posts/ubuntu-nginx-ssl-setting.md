@@ -9,7 +9,7 @@ tags:
   - nginx
   - SSL
   - https
-categories:
+categories: ubuntu
 ---
 
 ### 安裝 NGINX 伺服器
