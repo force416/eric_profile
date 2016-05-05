@@ -34,3 +34,19 @@ $ npm install <package name>
 ```bash
 $ npm install <package name> --save
 ```
+
+* 定義在`package.json`檔案裡`scripts`參數下的指令可透過`npm start`執行
+```xml
+#package.json
+
+...
+"scripts": {
+    "start": "node ./bin/www"
+}
+...
+
+```
+```bash
+#實際上是執行 $ node ./bin/www
+$ npm start
+```

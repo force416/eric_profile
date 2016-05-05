@@ -135,7 +135,11 @@ npm 全名為 Node Package Manager，是 Node.js 的套件（package）管理工
 <li><p>專案安裝並加入<code>package.json</code>檔案裡，需加上<code>--save</code>的參數</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install &lt;package name&gt; --save</span><br></pre></td></tr></table></figure>
 </li>
+<li><p>定義在<code>package.json</code>檔案裡<code>scripts</code>參數下的指令可透過<code>npm start</code>執行</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#package.json</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line">"scripts": &#123;</span><br><span class="line">    "start": "node ./bin/www"</span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#實際上是執行 $ node ./bin/www</span></span><br><span class="line">$ npm start</span><br></pre></td></tr></table></figure>
 	  
 	</div>
 
