@@ -6,15 +6,19 @@
   <meta http-equiv="cache-control" content="no-cache">
   <meta http-equiv="expires" content="0">
   
-  <title>hexo套用fb的comments | Eric Shih blog</title>
+  <title>ubuntu上安裝Nginx | Eric Shih blog</title>
   <meta name="author" content="Eric Shih">
   
-  <meta name="description" content="如何套用facebook comments的功能">
+  <meta name="description" content="Nginx 介紹
+Nginx 是個 Reverse Proxy Server(反向代理伺服器)，為什麼叫反向代理呢? 因為相對於一般 Proxy Server(正向代理伺服器)做的事剛好相反，用一張圖來解釋(圖片出處)
+
+
+在 ubuntu 上透過 apt-get 安裝 Nginx12$ sudo ">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="hexo套用fb的comments"/>
+  <meta property="og:title" content="ubuntu上安裝Nginx"/>
   <meta property="og:site_name" content="Eric Shih blog"/>
 
   
@@ -91,7 +95,7 @@
 
 	
 		<div class="page-header">
-			<h1> hexo套用fb的comments</h1>
+			<h1> ubuntu上安裝Nginx</h1>
 		</div>
 	
 
@@ -106,25 +110,32 @@
 
 	<!-- content -->
 	<div class="mypage">		
-	  
-		 <div class="alert alert-success description">
-			<i class="fa fa-info-circle"></i> 如何套用facebook comments的功能
-		 </div> <!-- alert -->
 	  		
 
-	  <h3 id="申請fb開發者應用程式ID"><a href="#申請fb開發者應用程式ID" class="headerlink" title="申請fb開發者應用程式ID"></a>申請fb開發者應用程式ID</h3><ul>
-<li>上fb的<a href="https://developers.facebook.com/" target="_blank" rel="external">開發者網站</a>的官網註冊應用程式網站</li>
-</ul>
-<h3 id="套用至網站"><a href="#套用至網站" class="headerlink" title="套用至網站"></a>套用至網站</h3><ul>
-<li>上 <a href="https://developers.facebook.com/docs/plugins/embedded-comments" target="_blank" rel="external">fb embedded comments</a> 取得內嵌程式的code</li>
-<li><p>貼入<code>&lt;header /&gt;</code>裡</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"fb-root"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;script&gt;(<span class="function"><span class="keyword">function</span>(<span class="params">d, s, id</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> js, fjs = d.getElementsByTagName(s)[<span class="number">0</span>];</span><br><span class="line">  <span class="keyword">if</span> (d.getElementById(id)) <span class="keyword">return</span>;</span><br><span class="line">  js = d.createElement(s); js.id = id;</span><br><span class="line">  js.src = <span class="string">"//connect.facebook.net/zh_TW/sdk.js#xfbml=1&amp;version=v2.6&amp;appId=8"</span>;</span><br><span class="line">  fjs.parentNode.insertBefore(js, fjs);</span><br><span class="line">&#125;(<span class="built_in">document</span>, <span class="string">'script'</span>, <span class="string">'facebook-jssdk'</span>));&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>貼入想呈現留言區塊的地方</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"fb-comment-embed"</span> data-href=<span class="string">"https://www.facebook.com/zuck/posts/1000000000?comment_id=1000000000&amp;amp;reply_comment_id=6500000000"</span> data-width=<span class="string">"560"</span> data-include-parent=<span class="string">"false"</span>&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+	  <h3 id="Nginx-介紹"><a href="#Nginx-介紹" class="headerlink" title="Nginx 介紹"></a>Nginx 介紹</h3><ul>
+<li>Nginx 是個 Reverse Proxy Server(反向代理伺服器)，為什麼叫反向代理呢? 因為相對於一般 Proxy Server(正向代理伺服器)做的事剛好相反，用一張圖來解釋<a href="https://www.zhihu.com/question/24723688" target="_blank" rel="external">(圖片出處)</a><img src="/eric_profile/2016/05/08/ubuntu-install-nginx/proxy_server.jpg" alt="proxy_server.jpg" title="">
 </li>
 </ul>
-<h3 id="開始使用"><a href="#開始使用" class="headerlink" title="開始使用"></a>開始使用</h3>	  
+<h3 id="在-ubuntu-上透過-apt-get-安裝-Nginx"><a href="#在-ubuntu-上透過-apt-get-安裝-Nginx" class="headerlink" title="在 ubuntu 上透過 apt-get 安裝 Nginx"></a>在 ubuntu 上透過 apt-get 安裝 Nginx</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install nginx</span><br></pre></td></tr></table></figure>
+<h3 id="Nginx-設定"><a href="#Nginx-設定" class="headerlink" title="Nginx 設定"></a>Nginx 設定</h3><ul>
+<li>基本的配置文件都在 <code>/etc/nginx</code> 路徑底下</li>
+<li>主要的置文件 <code>/etc/nginx/sites-available/default</code></li>
+</ul>
+<h3 id="Nginx-command-line"><a href="#Nginx-command-line" class="headerlink" title="Nginx command line"></a>Nginx command line</h3><ul>
+<li><p>start</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service nginx start</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>stop</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service nginx stop</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>restart</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service nginx restart</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重新讀取配置文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service nginx <span class="_">-s</span> reload</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+	  
 	</div>
 
 	<div>
@@ -133,13 +144,12 @@
 
     
     
-    <a href="/eric_profile/2016/04/27/install-mysqldb-on-ubuntu/" type="button" class="btn btn-default"><i
-                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>Prev</a>
     
 
     <a href="/eric_profile/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
     
-    <a href="/eric_profile/2016/04/26/deployHexoToGithub/" type="button" class="btn btn-default ">Next<i
+    <a href="/eric_profile/2016/05/01/npm-basic-command-line/" type="button" class="btn btn-default ">Next<i
                 class="fa fa-arrow-circle-o-right"></i></a>
     
 
@@ -156,7 +166,7 @@
 
     
 
-<div class="fb-comments" data-href="http://force416.github.io/eric_profile/2016/04/26/fb_comments/" data-width="850px"  data-numposts="5"></div>
+<div class="fb-comments" data-href="http://force416.github.io/eric_profile/2016/05/08/ubuntu-install-nginx/" data-width="850px"  data-numposts="5"></div>
 
 </section>
 
@@ -171,7 +181,7 @@
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2016-04-26 
+	2016-05-08 
 	</div>
 	
 
@@ -182,7 +192,7 @@
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/eric_profile/categories/hexo/">hexo<span>1</span></a></li>
+    <li><a href="/eric_profile/categories/ubuntu/">ubuntu<span>2</span></a></li>
   </li>
 
     </ul>
@@ -190,14 +200,6 @@
 	
 
 	<!-- tags -->
-	
-	<div class="meta-widget">
-	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
-    <ul id="tags" class="tag_box list-unstyled collapse in">	  
-	    
-  <li><a href="/eric_profile/tags/facebook-comments/">facebook comments<span>1</span></a></li> <li><a href="/eric_profile/tags/hexo/">hexo<span>2</span></a></li>
-    </ul>
-	</div>
 		
 
 	<!-- toc -->
@@ -206,7 +208,7 @@
 	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
 	   <div id="toc" class="toc collapse in">
 		   <span class="toc-title">Contents</span>
-			<ol class="toc-article"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#申請fb開發者應用程式ID"><span class="toc-article-text">申請fb開發者應用程式ID</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#套用至網站"><span class="toc-article-text">套用至網站</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#開始使用"><span class="toc-article-text">開始使用</span></a></li></ol>
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Nginx-介紹"><span class="toc-article-text">Nginx 介紹</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#在-ubuntu-上透過-apt-get-安裝-Nginx"><span class="toc-article-text">在 ubuntu 上透過 apt-get 安裝 Nginx</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Nginx-設定"><span class="toc-article-text">Nginx 設定</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Nginx-command-line"><span class="toc-article-text">Nginx command line</span></a></li></ol>
 		</div>
 	
 	</div>

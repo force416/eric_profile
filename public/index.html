@@ -109,6 +109,56 @@
 <div class="row">
 	<div class="col-md-8">
 		<h3 class="title">
+			<a href="/eric_profile/2016/05/08/ubuntu-install-nginx/" >ubuntu上安裝Nginx</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2016-05-08  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<h3 id="Nginx-介紹"><a href="#Nginx-介紹" class="headerlink" title="Nginx 介紹"></a>Nginx 介紹</h3><ul>
+<li>Nginx 是個 Reverse Proxy Server(反向代理伺服器)，為什麼叫反向代理呢? 因為相對於一般 Proxy Server(正向代理伺服器)做的事剛好相反，用一張圖來解釋<a href="https://www.zhihu.com/question/24723688" target="_blank" rel="external">(圖片出處)</a><img src="/eric_profile/2016/05/08/ubuntu-install-nginx/proxy_server.jpg" alt="proxy_server.jpg" title="">
+</li>
+</ul>
+<h3 id="在-ubuntu-上透過-apt-get-安裝-Nginx"><a href="#在-ubuntu-上透過-apt-get-安裝-Nginx" class="headerlink" title="在 ubuntu 上透過 apt-get 安裝 Nginx"></a>在 ubuntu 上透過 apt-get 安裝 Nginx</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install nginx</span><br></pre></td></tr></table></figure>
+<h3 id="Nginx-設定"><a href="#Nginx-設定" class="headerlink" title="Nginx 設定"></a>Nginx 設定</h3><ul>
+<li>基本的配置文件都在 <code>/etc/nginx</code> 路徑底下</li>
+<li>主要的置文件 <code>/etc/nginx/sites-available/default</code></li>
+</ul>
+<h3 id="Nginx-command-line"><a href="#Nginx-command-line" class="headerlink" title="Nginx command line"></a>Nginx command line</h3><ul>
+<li><p>start</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service nginx start</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>stop</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service nginx stop</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>restart</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service nginx restart</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重新讀取配置文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service nginx <span class="_">-s</span> reload</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+	
+	</div>
+  <a type="button" href="/eric_profile/2016/05/08/ubuntu-install-nginx/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
 			<a href="/eric_profile/2016/05/01/npm-basic-command-line/" >npm 基本指令</a>
 		</h3>
 		</div>
@@ -270,10 +320,10 @@
 <h3 id="套用至網站"><a href="#套用至網站" class="headerlink" title="套用至網站"></a>套用至網站</h3><ul>
 <li>上 <a href="https://developers.facebook.com/docs/plugins/embedded-comments" target="_blank" rel="external">fb embedded comments</a> 取得內嵌程式的code</li>
 <li><p>貼入<code>&lt;header /&gt;</code>裡</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"fb-root"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&lt;script&gt;(<span class="function"><span class="keyword">function</span>(<span class="params">d, s, id</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> js, fjs = d.getElementsByTagName(s)[<span class="number">0</span>];</span><br><span class="line">  <span class="keyword">if</span> (d.getElementById(id)) <span class="keyword">return</span>;</span><br><span class="line">  js = d.createElement(s); js.id = id;</span><br><span class="line">  js.src = <span class="string">"//connect.facebook.net/zh_TW/sdk.js#xfbml=1&amp;version=v2.6&amp;appId=8"</span>;</span><br><span class="line">  fjs.parentNode.insertBefore(js, fjs);</span><br><span class="line">&#125;(<span class="built_in">document</span>, <span class="string">'script'</span>, <span class="string">'facebook-jssdk'</span>));<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"fb-root"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;script&gt;(<span class="function"><span class="keyword">function</span>(<span class="params">d, s, id</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> js, fjs = d.getElementsByTagName(s)[<span class="number">0</span>];</span><br><span class="line">  <span class="keyword">if</span> (d.getElementById(id)) <span class="keyword">return</span>;</span><br><span class="line">  js = d.createElement(s); js.id = id;</span><br><span class="line">  js.src = <span class="string">"//connect.facebook.net/zh_TW/sdk.js#xfbml=1&amp;version=v2.6&amp;appId=8"</span>;</span><br><span class="line">  fjs.parentNode.insertBefore(js, fjs);</span><br><span class="line">&#125;(<span class="built_in">document</span>, <span class="string">'script'</span>, <span class="string">'facebook-jssdk'</span>));&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>貼入想呈現留言區塊的地方</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"fb-comment-embed"</span> data-href=<span class="string">"https://www.facebook.com/zuck/posts/1000000000?comment_id=1000000000&amp;amp;reply_comment_id=6500000000"</span> data-width=<span class="string">"560"</span> data-include-parent=<span class="string">"false"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"fb-comment-embed"</span> data-href=<span class="string">"https://www.facebook.com/zuck/posts/1000000000?comment_id=1000000000&amp;amp;reply_comment_id=6500000000"</span> data-width=<span class="string">"560"</span> data-include-parent=<span class="string">"false"</span>&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="開始使用"><a href="#開始使用" class="headerlink" title="開始使用"></a>開始使用</h3>
@@ -364,7 +414,7 @@
 		
 			<li><a href="/eric_profile/categories/node-js/">node.js<span>1</span></a></li>
 		
-			<li><a href="/eric_profile/categories/ubuntu/">ubuntu<span>1</span></a></li>
+			<li><a href="/eric_profile/categories/ubuntu/">ubuntu<span>2</span></a></li>
 		
 		</ul>
 	</div>
@@ -375,23 +425,23 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/eric_profile/tags/SSL/">SSL<span>1</span></a></li>
+			<li><a href="/eric_profile/tags/facebook-comments/">facebook comments<span>1</span></a></li>
+		
+			<li><a href="/eric_profile/tags/github/">github<span>1</span></a></li>
 		
 			<li><a href="/eric_profile/tags/nginx/">nginx<span>1</span></a></li>
 		
-			<li><a href="/eric_profile/tags/facebook-comments/">facebook comments<span>1</span></a></li>
-		
-			<li><a href="/eric_profile/tags/mysql/">mysql<span>1</span></a></li>
-		
 			<li><a href="/eric_profile/tags/hexo/">hexo<span>2</span></a></li>
 		
-			<li><a href="/eric_profile/tags/npm/">npm<span>1</span></a></li>
+			<li><a href="/eric_profile/tags/SSL/">SSL<span>1</span></a></li>
 		
-			<li><a href="/eric_profile/tags/github/">github<span>1</span></a></li>
+			<li><a href="/eric_profile/tags/npm/">npm<span>1</span></a></li>
 		
 			<li><a href="/eric_profile/tags/https/">https<span>1</span></a></li>
 		
 			<li><a href="/eric_profile/tags/ubuntu/">ubuntu<span>2</span></a></li>
+		
+			<li><a href="/eric_profile/tags/mysql/">mysql<span>1</span></a></li>
 		
 		 
 		</ul>
@@ -403,6 +453,10 @@
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/eric_profile/2016/05/08/ubuntu-install-nginx/" ><i class="fa fa-file-o"></i>ubuntu上安裝Nginx</a>
+      </li>
     
       <li>
         <a href="/eric_profile/2016/05/01/npm-basic-command-line/" ><i class="fa fa-file-o"></i>npm 基本指令</a>
@@ -418,10 +472,6 @@
     
       <li>
         <a href="/eric_profile/2016/04/26/fb_comments/"  title="如何套用facebook comments的功能" ><i class="fa fa-file-o"></i>hexo套用fb的comments</a>
-      </li>
-    
-      <li>
-        <a href="/eric_profile/2016/04/26/deployHexoToGithub/"  title="這篇是在講如何在github的靜態頁面上架設hexo blog framework" ><i class="fa fa-file-o"></i>在github上架設hexo</a>
       </li>
     
   </ul>
