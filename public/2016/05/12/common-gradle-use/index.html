@@ -9,6 +9,13 @@
   <title>gradle 基本使用 | Eric Shih blog</title>
   <meta name="author" content="Eric Shih">
   
+  <meta name="description" content="gradle 簡介
+gradle 相對於 maven 也是一套 java project 的build tool，跟 maven 一樣都是套件管理工具
+
+整合Eclipse使用
+下載gradle 套件 Gradle IDE Pack
+建立java project or dynamic web pro">
+  
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -106,7 +113,22 @@
 	<div class="mypage">		
 	  		
 
-	  	  
+	  <h3 id="gradle-簡介"><a href="#gradle-簡介" class="headerlink" title="gradle 簡介"></a>gradle 簡介</h3><ul>
+<li>gradle 相對於 maven 也是一套 java project 的build tool，跟 maven 一樣都是套件管理工具</li>
+</ul>
+<h3 id="整合Eclipse使用"><a href="#整合Eclipse使用" class="headerlink" title="整合Eclipse使用"></a>整合Eclipse使用</h3><ul>
+<li>下載gradle 套件 <code>Gradle IDE Pack</code></li>
+<li>建立<code>java project</code> or <code>dynamic web project</code></li>
+<li>在project 的 root path 下建立 <code>build.gradle</code> file</li>
+<li><code>build.gradle</code> 簡易範例內容如下</li>
+</ul>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: <span class="string">'java'</span></span><br><span class="line">apply plugin: <span class="string">'eclipse'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">sourceCompatibility</span> = <span class="number">1.5</span></span><br><span class="line">version = <span class="string">'1.0'</span></span><br><span class="line">jar &#123;</span><br><span class="line">    manifest &#123;</span><br><span class="line">        attributes <span class="string">'Implementation-Title'</span>: <span class="string">'Gradle Quickstart'</span>,</span><br><span class="line">                   <span class="string">'Implementation-Version'</span>: version</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">repositories</span> &#123;</span><br><span class="line">    mavenCentral()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">dependencies</span> &#123;</span><br><span class="line"><span class="keyword">compile</span> <span class="keyword">group</span>:<span class="string">'commons-collections'</span>,name:<span class="string">'commons-collections'</span>,version:<span class="string">'3.2'</span></span><br><span class="line">testCompile <span class="keyword">group</span>: <span class="string">'junit'</span>, name: <span class="string">'junit'</span>, version: <span class="string">'4.+'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test &#123;</span><br><span class="line">    systemProperties <span class="string">'property'</span>: <span class="string">'value'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">uploadArchives &#123;</span><br><span class="line">    <span class="keyword">repositories</span> &#123;</span><br><span class="line">       <span class="keyword">flatDir</span> &#123;</span><br><span class="line">           dirs <span class="string">'repos'</span></span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="常用gradle-task"><a href="#常用gradle-task" class="headerlink" title="常用gradle task"></a>常用gradle task</h3><ul>
+<li><code>gradle -u tasks</code> 列出目前有哪些task</li>
+<li><code>gradle -u dependencies</code> 列出套件的相依關係</li>
+</ul>
+<h3 id="相關參考資源"><a href="#相關參考資源" class="headerlink" title="相關參考資源"></a>相關參考資源</h3><p><a href="https://spring.io/guides/gs/gradle/" target="_blank" rel="external">spring io</a><br><a href="http://www.codedata.com.tw/java/understanding-gradle-1-ant/" target="_blank" rel="external">CodeData</a><br>(<a href="http://www.journaldev.com/8118/java-simple-example-with-gradle-eclipse-plugin" target="_blank" rel="external">http://www.journaldev.com/8118/java-simple-example-with-gradle-eclipse-plugin</a>)</p>
+	  
 	</div>
 
 	<div>
@@ -187,7 +209,7 @@
 	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
 	   <div id="toc" class="toc collapse in">
 		   <span class="toc-title">Contents</span>
-			
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#gradle-簡介"><span class="toc-article-text">gradle 簡介</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#整合Eclipse使用"><span class="toc-article-text">整合Eclipse使用</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#常用gradle-task"><span class="toc-article-text">常用gradle task</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#相關參考資源"><span class="toc-article-text">相關參考資源</span></a></li></ol>
 		</div>
 	
 	</div>
