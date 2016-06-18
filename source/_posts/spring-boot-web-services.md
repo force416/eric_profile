@@ -64,3 +64,10 @@ public class App
 ### deploy to server
 * 由於spring boot已內建tomcat server 故只要以一般執行java class 的方式執行`App.java`即可
 * 透過browser連結 `localhost:8080/z/hello/3` 如有回傳json格式資料，即代表成功。
+
+### application.properties
+* 如果想要改變預設的 port `8080`，只需要在`src/main/resources`路徑下加入檔案`application.properties` 內容如下
+``` properties
+server.port = 8090
+```
+* 加入此設定再重啟spring boot 就可透過browser連結 `localhost:8090/z/hello/3`
