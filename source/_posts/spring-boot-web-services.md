@@ -71,3 +71,21 @@ public class App
 server.port = 8090
 ```
 * 加入此設定再重啟spring boot 就可透過browser連結 `localhost:8090/z/hello/3`
+
+### project tree
+* [gihub spring boot demo](https://github.com/force416/springboot_demo)
+* 專案結構
+``` txt
+├── pom.xml
+├── README.md
+├── src
+│   └── main
+│       ├── java
+│       │   └── eric
+│       │       └── ws
+│       │           ├── App.java
+│       │           └── SpringBootSconfiguration.java
+│       └── resources
+│           └── application.properties
+└── target
+```
