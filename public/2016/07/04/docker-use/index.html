@@ -6,15 +6,24 @@
   <meta http-equiv="cache-control" content="no-cache">
   <meta http-equiv="expires" content="0">
   
-  <title>hexo套用fb的comments | Eric Shih blog</title>
+  <title>docker 基本教學 | Eric Shih blog</title>
   <meta name="author" content="Eric Shih">
   
-  <meta name="description" content="如何套用facebook comments的功能">
+  <meta name="description" content="docker 介紹
+關於docker 可以用張圖片解釋 圖片出處
+
+
+基本上要搞清楚 host、image、container、dockerfile之間的關係
+
+docker官網的Repositories提供imgae下載，包含ubuntu、mysql、mongodb各式image
+
+
+docker">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="hexo套用fb的comments"/>
+  <meta property="og:title" content="docker 基本教學"/>
   <meta property="og:site_name" content="Eric Shih blog"/>
 
   
@@ -91,7 +100,7 @@
 
 	
 		<div class="page-header">
-			<h1> hexo套用fb的comments</h1>
+			<h1> docker 基本教學</h1>
 		</div>
 	
 
@@ -106,25 +115,29 @@
 
 	<!-- content -->
 	<div class="mypage">		
-	  
-		 <div class="alert alert-success description">
-			<i class="fa fa-info-circle"></i> 如何套用facebook comments的功能
-		 </div> <!-- alert -->
 	  		
 
-	  <h3 id="申請fb開發者應用程式ID"><a href="#申請fb開發者應用程式ID" class="headerlink" title="申請fb開發者應用程式ID"></a>申請fb開發者應用程式ID</h3><ul>
-<li>上fb的<a href="https://developers.facebook.com/" target="_blank" rel="external">開發者網站</a>的官網註冊應用程式網站</li>
-</ul>
-<h3 id="套用至網站"><a href="#套用至網站" class="headerlink" title="套用至網站"></a>套用至網站</h3><ul>
-<li>上 <a href="https://developers.facebook.com/docs/plugins/embedded-comments" target="_blank" rel="external">fb embedded comments</a> 取得內嵌程式的code</li>
-<li><p>貼入<code>&lt;header /&gt;</code>裡</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"fb-root"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;script&gt;(<span class="function"><span class="keyword">function</span>(<span class="params">d, s, id</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> js, fjs = d.getElementsByTagName(s)[<span class="number">0</span>];</span><br><span class="line">  <span class="keyword">if</span> (d.getElementById(id)) <span class="keyword">return</span>;</span><br><span class="line">  js = d.createElement(s); js.id = id;</span><br><span class="line">  js.src = <span class="string">"//connect.facebook.net/zh_TW/sdk.js#xfbml=1&amp;version=v2.6&amp;appId=8"</span>;</span><br><span class="line">  fjs.parentNode.insertBefore(js, fjs);</span><br><span class="line">&#125;(<span class="built_in">document</span>, <span class="string">'script'</span>, <span class="string">'facebook-jssdk'</span>));&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+	  <h3 id="docker-介紹"><a href="#docker-介紹" class="headerlink" title="docker 介紹"></a>docker 介紹</h3><ul>
+<li><p>關於docker 可以用張圖片解釋 <a href="https://hackpad.com/ep/pad/static/ZwP4hGtPaJB" target="_blank" rel="external">圖片出處</a></p>
+<img src="/eric_profile/2016/07/04/docker-use/docker_img.jpg" alt="docker_img.jpg" title="">
 </li>
-<li><p>貼入想呈現留言區塊的地方</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"fb-comment-embed"</span> data-href=<span class="string">"https://www.facebook.com/zuck/posts/1000000000?comment_id=1000000000&amp;amp;reply_comment_id=6500000000"</span> data-width=<span class="string">"560"</span> data-include-parent=<span class="string">"false"</span>&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<li><p>基本上要搞清楚 <code>host</code>、<code>image</code>、<code>container</code>、<code>dockerfile</code>之間的關係</p>
+</li>
+<li><p><a href="https://hub.docker.com/" target="_blank" rel="external">docker官網的Repositories</a><br>提供<code>imgae</code>下載，包含<code>ubuntu</code>、<code>mysql</code>、<code>mongodb</code>各式image</p>
 </li>
 </ul>
-<h3 id="開始使用"><a href="#開始使用" class="headerlink" title="開始使用"></a>開始使用</h3>	  
+<h3 id="docker-install"><a href="#docker-install" class="headerlink" title="docker install"></a>docker install</h3><ul>
+<li><a href="https://docs.docker.com/engine/installation/linux/ubuntulinux/" target="_blank" rel="external">官網 ubuntu docker 安裝教學</a> 各版本的linux安裝方式各有不同</li>
+</ul>
+<h3 id="docker-cli"><a href="#docker-cli" class="headerlink" title="docker cli"></a>docker cli</h3><ul>
+<li><p>最基本的docker run 執行一個<code>ubuntu</code> (:後面是image的tag版本14.04)的<code>container</code> 印出Hello world</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ docker run ubuntu:14.04 /bin/<span class="built_in">echo</span> <span class="string">'Hello world'</span></span><br><span class="line">Hello world</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更多指令在終端機執行docker 就會列出有哪些指令可以用了</p>
+</li>
+</ul>
+<h3 id="docker-參考"><a href="#docker-參考" class="headerlink" title="docker 參考"></a>docker 參考</h3><p>(<a href="https://docs.docker.com/" target="_blank" rel="external">https://docs.docker.com/</a>) docker官網文件<br>(<a href="https://www.gitbook.com/book/philipzheng/docker_practice/details)《Docker" target="_blank" rel="external">https://www.gitbook.com/book/philipzheng/docker_practice/details)《Docker</a> —— 從入門到實踐­》</p>
+	  
 	</div>
 
 	<div>
@@ -133,13 +146,12 @@
 
     
     
-    <a href="/eric_profile/2016/04/27/install-mysqldb-on-ubuntu/" type="button" class="btn btn-default"><i
-                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>Prev</a>
     
 
     <a href="/eric_profile/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
     
-    <a href="/eric_profile/2016/04/26/deployHexoToGithub/" type="button" class="btn btn-default ">Next<i
+    <a href="/eric_profile/2016/05/28/spring-boot-web-services/" type="button" class="btn btn-default ">Next<i
                 class="fa fa-arrow-circle-o-right"></i></a>
     
 
@@ -156,7 +168,7 @@
 
     
 
-<div class="fb-comments" data-href="http://force416.github.io/eric_profile/2016/04/26/fb_comments/" data-width="850px"  data-numposts="5"></div>
+<div class="fb-comments" data-href="http://force416.github.io/eric_profile/2016/07/04/docker-use/" data-width="850px"  data-numposts="5"></div>
 
 </section>
 
@@ -171,7 +183,7 @@
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2016-04-26 
+	2016-07-04 
 	</div>
 	
 
@@ -182,7 +194,7 @@
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/eric_profile/categories/hexo/">hexo<span>1</span></a></li>
+    <li><a href="/eric_profile/categories/docker/">docker<span>1</span></a></li>
   </li>
 
     </ul>
@@ -190,14 +202,6 @@
 	
 
 	<!-- tags -->
-	
-	<div class="meta-widget">
-	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
-    <ul id="tags" class="tag_box list-unstyled collapse in">	  
-	    
-  <li><a href="/eric_profile/tags/hexo/">hexo<span>2</span></a></li> <li><a href="/eric_profile/tags/facebook-comments/">facebook comments<span>1</span></a></li>
-    </ul>
-	</div>
 		
 
 	<!-- toc -->
@@ -206,7 +210,7 @@
 	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
 	   <div id="toc" class="toc collapse in">
 		   <span class="toc-title">Contents</span>
-			<ol class="toc-article"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#申請fb開發者應用程式ID"><span class="toc-article-text">申請fb開發者應用程式ID</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#套用至網站"><span class="toc-article-text">套用至網站</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#開始使用"><span class="toc-article-text">開始使用</span></a></li></ol>
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#docker-介紹"><span class="toc-article-text">docker 介紹</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#docker-install"><span class="toc-article-text">docker install</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#docker-cli"><span class="toc-article-text">docker cli</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#docker-參考"><span class="toc-article-text">docker 參考</span></a></li></ol>
 		</div>
 	
 	</div>
