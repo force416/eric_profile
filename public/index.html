@@ -109,6 +109,125 @@
 <div class="row">
 	<div class="col-md-8">
 		<h3 class="title">
+			<a href="/eric_profile/2016/07/28/implement-linkedlist-in-java/" >implement-linkedlist-in-java</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2016-07-28  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		
+	
+	</div>
+  <a type="button" href="/eric_profile/2016/07/28/implement-linkedlist-in-java/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/eric_profile/2016/07/28/line-bot-api/" >Line機器人API</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2016-07-28  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<h3 id="註冊申請Line-機器人"><a href="#註冊申請Line-機器人" class="headerlink" title="註冊申請Line 機器人"></a>註冊申請Line 機器人</h3><ul>
+<li><a href="https://developers.line.me/bot-api/overview" target="_blank" rel="external">Line developer 官網</a> 申請機器人帳號</li>
+<li>申請註冊channel後，設定<code>Callback URL</code>，必需要是<code>https</code>而且不能是自行簽署的憑證，還要符合line認可的<a href="https://developers.line.me/wp-content/uploads/2016/04/ca_root.txt" target="_blank" rel="external">CA list</a></li>
+<li>還需在<code>Server IP Whitelist</code> 加上你提供callback url的主機ip</li>
+<li>取得API需使用的三組代碼<code>Channel ID</code> <code>Channel Secret</code> <code>MID</code></li>
+</ul>
+<h3 id="開始撰寫機器人程式"><a href="#開始撰寫機器人程式" class="headerlink" title="開始撰寫機器人程式"></a>開始撰寫機器人程式</h3><ul>
+<li>推薦使用<a href="https://github.com/line/line-bot-sdk-java" target="_blank" rel="external">java sdk</a></li>
+</ul>
+<h3 id="個人github-sample"><a href="#個人github-sample" class="headerlink" title="個人github sample"></a>個人github sample</h3><ul>
+<li>(<a href="https://github.com/force416/linebot" target="_blank" rel="external">https://github.com/force416/linebot</a>)</li>
+</ul>
+
+	
+	</div>
+  <a type="button" href="/eric_profile/2016/07/28/line-bot-api/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/eric_profile/2016/07/21/godaddy-ssl-and-nginx-install/" >go daddy買ssl &amp; Nginx 安裝</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2016-07-21  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<h3 id="在本機產生憑證"><a href="#在本機產生憑證" class="headerlink" title="在本機產生憑證"></a>在本機產生憑證</h3><ul>
+<li><p>透過openssl 產生憑證檔</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl req -new -newkey rsa:2048 -nodes -keyout yourdomain.key -out yourdomain.csr</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>輸入申請資料 常用名/機構/組織/城市/州或省/國家 等等資訊</p>
+</li>
+</ul>
+<h3 id="godaddy-domain-管理介面"><a href="#godaddy-domain-管理介面" class="headerlink" title="godaddy domain 管理介面"></a>godaddy domain 管理介面</h3><ul>
+<li>開始剛剛產生的<code>.csr</code>檔案，在godaddy的介面上輸入</li>
+</ul>
+<h3 id="從godaddy下載SSL憑證檔案"><a href="#從godaddy下載SSL憑證檔案" class="headerlink" title="從godaddy下載SSL憑證檔案"></a>從godaddy下載SSL憑證檔案</h3><h3 id="安裝至nginx伺服器上"><a href="#安裝至nginx伺服器上" class="headerlink" title="安裝至nginx伺服器上"></a>安裝至nginx伺服器上</h3><ul>
+<li>需先將剛下載的兩個檔案合併為一個檔</li>
+<li>安裝是nginx上，設定如下</li>
+</ul>
+<h3 id="設定-nginx-伺服器"><a href="#設定-nginx-伺服器" class="headerlink" title="設定 nginx 伺服器"></a>設定 nginx 伺服器</h3><ul>
+<li><p>需先將剛下載的兩個檔案合併為一個檔</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo cat your_domain_name.crt DigiCertCA.crt &gt;&gt; bundle.crt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>編輯 nginx 的設定檔</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vi /etc/nginx/sites-available/default</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>加入以下設定</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">upstream app_server &#123;</span><br><span class="line">    server 127.0.0.1:8080 fail_timeout=0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">        listen 443;</span><br><span class="line">        server_name localhost;</span><br><span class="line"></span><br><span class="line">        #root html;</span><br><span class="line">        #index index.html index.htm;</span><br><span class="line"></span><br><span class="line">        ssl on;</span><br><span class="line">        #設定憑證金鑰的路徑</span><br><span class="line">        ssl_certificate bundle.crt;</span><br><span class="line">        ssl_certificate_key yourdomain.key;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">                proxy_pass http://app_server;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="重新啟動-nginx"><a href="#重新啟動-nginx" class="headerlink" title="重新啟動 nginx"></a>重新啟動 nginx</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service nginx restart</span><br></pre></td></tr></table></figure>
+
+	
+	</div>
+  <a type="button" href="/eric_profile/2016/07/21/godaddy-ssl-and-nginx-install/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
 			<a href="/eric_profile/2016/07/04/docker-use/" >docker 基本教學</a>
 		</h3>
 		</div>
@@ -448,91 +567,6 @@
 </div>
 
 		
-			
-	
-	<!-- display as entry -->
-<div class="row">
-	<div class="col-md-8">
-		<h3 class="title">
-			<a href="/eric_profile/2016/04/26/fb_comments/" title="如何套用facebook comments的功能">hexo套用fb的comments</a>
-		</h3>
-		</div>
-	<div class="col-md-4">
-		<div class="date">post @ 2016-04-26  </div>
-		</div>
-	</div>
-	
-
-
-			<div class="entry">
-  <div class="row">
-	
-	
-		<h3 id="申請fb開發者應用程式ID"><a href="#申請fb開發者應用程式ID" class="headerlink" title="申請fb開發者應用程式ID"></a>申請fb開發者應用程式ID</h3><ul>
-<li>上fb的<a href="https://developers.facebook.com/" target="_blank" rel="external">開發者網站</a>的官網註冊應用程式網站</li>
-</ul>
-<h3 id="套用至網站"><a href="#套用至網站" class="headerlink" title="套用至網站"></a>套用至網站</h3><ul>
-<li>上 <a href="https://developers.facebook.com/docs/plugins/embedded-comments" target="_blank" rel="external">fb embedded comments</a> 取得內嵌程式的code</li>
-<li><p>貼入<code>&lt;header /&gt;</code>裡</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"fb-root"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;script&gt;(<span class="function"><span class="keyword">function</span>(<span class="params">d, s, id</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> js, fjs = d.getElementsByTagName(s)[<span class="number">0</span>];</span><br><span class="line">  <span class="keyword">if</span> (d.getElementById(id)) <span class="keyword">return</span>;</span><br><span class="line">  js = d.createElement(s); js.id = id;</span><br><span class="line">  js.src = <span class="string">"//connect.facebook.net/zh_TW/sdk.js#xfbml=1&amp;version=v2.6&amp;appId=8"</span>;</span><br><span class="line">  fjs.parentNode.insertBefore(js, fjs);</span><br><span class="line">&#125;(<span class="built_in">document</span>, <span class="string">'script'</span>, <span class="string">'facebook-jssdk'</span>));&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>貼入想呈現留言區塊的地方</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"fb-comment-embed"</span> data-href=<span class="string">"https://www.facebook.com/zuck/posts/1000000000?comment_id=1000000000&amp;amp;reply_comment_id=6500000000"</span> data-width=<span class="string">"560"</span> data-include-parent=<span class="string">"false"</span>&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="開始使用"><a href="#開始使用" class="headerlink" title="開始使用"></a>開始使用</h3>
-	
-	</div>
-  <a type="button" href="/eric_profile/2016/04/26/fb_comments/#more" class="btn btn-default more">Read More</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->
-<div class="row">
-	<div class="col-md-8">
-		<h3 class="title">
-			<a href="/eric_profile/2016/04/26/deployHexoToGithub/" title="這篇是在講如何在github的靜態頁面上架設hexo blog framework">在github上架設hexo</a>
-		</h3>
-		</div>
-	<div class="col-md-4">
-		<div class="date">post @ 2016-04-26  </div>
-		</div>
-	</div>
-	
-
-
-			<div class="entry">
-  <div class="row">
-	
-	
-		<h3 id="申請github帳號"><a href="#申請github帳號" class="headerlink" title="申請github帳號"></a>申請github帳號</h3><h3 id="install-nodejs"><a href="#install-nodejs" class="headerlink" title="install nodejs"></a>install nodejs</h3><ul>
-<li>上<a href="https://nodejs.org/en/" target="_blank" rel="external">nodejs</a>的官網下載並安裝</li>
-</ul>
-<h3 id="npm-install-hexo"><a href="#npm-install-hexo" class="headerlink" title="npm install hexo"></a>npm install hexo</h3><ul>
-<li>上<a href="https://hexo.io/zh-tw/" target="_blank" rel="external">hexo</a>的官網有安裝教學</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br><span class="line">$ hexo init blog</span><br><span class="line">$ <span class="built_in">cd</span> blog</span><br><span class="line">$ npm install</span><br><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<h3 id="在github上建立repositories"><a href="#在github上建立repositories" class="headerlink" title="在github上建立repositories"></a>在github上建立repositories</h3><ul>
-<li>建立的專案名稱eric_profile</li>
-</ul>
-<h3 id="將專案發佈上github-page"><a href="#將專案發佈上github-page" class="headerlink" title="將專案發佈上github page"></a>將專案發佈上github page</h3><ul>
-<li>到該專案的<code>settings</code>設定<code>github pages</code>點選<code>launch automatic page generaotr</code> 一路照預設的點next</li>
-<li>建立完後會建立 branch 為<code>gh-pages</code>，只有在這個branch下的才會在github pages上顯示，網址是<a href="https://username.github.io/eric_profile/" target="_blank" rel="external">https://username.github.io/eric_profile/</a></li>
-</ul>
-<h3 id="設定hexo-deploy-to-github"><a href="#設定hexo-deploy-to-github" class="headerlink" title="設定hexo deploy to github"></a>設定hexo deploy to github</h3><ul>
-<li>修改 <code>_config.yml</code> 設定deploy git 資訊</li>
-</ul>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">	type: git</span><br><span class="line">	repository: git@github.com:force416/eric_profile.git</span><br><span class="line">	branch: gh-pages</span><br></pre></td></tr></table></figure>
-<h3 id="產生檔案-amp-deploy"><a href="#產生檔案-amp-deploy" class="headerlink" title="產生檔案 &amp; deploy"></a>產生檔案 &amp; deploy</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-	
-	</div>
-  <a type="button" href="/eric_profile/2016/04/26/deployHexoToGithub/#more" class="btn btn-default more">Read More</a>
-</div>
-
-		
 
 		</div>
 
@@ -542,6 +576,16 @@
 		<div class="pagination">
 
    
+    
+           <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>Prev</a>
+        
+
+        <a href="/eric_profile/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+ 
+       <a href="/eric_profile/page/2/" type="button" class="btn btn-default ">Next<i class="fa fa-arrow-circle-o-right"></i></a>     
+        
+
+  
 </div>
 
   		</center>
@@ -560,6 +604,8 @@
 		<h4>Categories</h4>
 		<ul class="tag_box inline list-unstyled">
 		
+			<li><a href="/eric_profile/categories/Java/">Java<span>1</span></a></li>
+		
 			<li><a href="/eric_profile/categories/docker/">docker<span>1</span></a></li>
 		
 			<li><a href="/eric_profile/categories/github/">github<span>1</span></a></li>
@@ -574,7 +620,7 @@
 		
 			<li><a href="/eric_profile/categories/spring-boot/">spring boot<span>1</span></a></li>
 		
-			<li><a href="/eric_profile/categories/ubuntu/">ubuntu<span>2</span></a></li>
+			<li><a href="/eric_profile/categories/ubuntu/">ubuntu<span>3</span></a></li>
 		
 		</ul>
 	</div>
@@ -585,29 +631,31 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/eric_profile/tags/SSL/">SSL<span>1</span></a></li>
+			<li><a href="/eric_profile/tags/web-service/">web service<span>1</span></a></li>
 		
-			<li><a href="/eric_profile/tags/java/">java<span>1</span></a></li>
+			<li><a href="/eric_profile/tags/facebook-comments/">facebook comments<span>1</span></a></li>
+		
+			<li><a href="/eric_profile/tags/https/">https<span>1</span></a></li>
 		
 			<li><a href="/eric_profile/tags/ubuntu/">ubuntu<span>2</span></a></li>
 		
-			<li><a href="/eric_profile/tags/npm/">npm<span>1</span></a></li>
+			<li><a href="/eric_profile/tags/SSL/">SSL<span>2</span></a></li>
 		
-			<li><a href="/eric_profile/tags/gradle/">gradle<span>1</span></a></li>
+			<li><a href="/eric_profile/tags/github/">github<span>1</span></a></li>
 		
-			<li><a href="/eric_profile/tags/web-service/">web service<span>1</span></a></li>
+			<li><a href="/eric_profile/tags/nginx/">nginx<span>2</span></a></li>
 		
 			<li><a href="/eric_profile/tags/mysql/">mysql<span>1</span></a></li>
 		
 			<li><a href="/eric_profile/tags/hexo/">hexo<span>2</span></a></li>
 		
-			<li><a href="/eric_profile/tags/https/">https<span>1</span></a></li>
+			<li><a href="/eric_profile/tags/npm/">npm<span>1</span></a></li>
 		
-			<li><a href="/eric_profile/tags/nginx/">nginx<span>1</span></a></li>
+			<li><a href="/eric_profile/tags/java/">java<span>1</span></a></li>
 		
-			<li><a href="/eric_profile/tags/github/">github<span>1</span></a></li>
+			<li><a href="/eric_profile/tags/gradle/">gradle<span>1</span></a></li>
 		
-			<li><a href="/eric_profile/tags/facebook-comments/">facebook comments<span>1</span></a></li>
+			<li><a href="/eric_profile/tags/Line/">Line<span>1</span></a></li>
 		
 		 
 		</ul>
@@ -621,23 +669,23 @@
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/eric_profile/2016/07/28/implement-linkedlist-in-java/" ><i class="fa fa-file-o"></i>implement-linkedlist-in-java</a>
+      </li>
+    
+      <li>
+        <a href="/eric_profile/2016/07/28/line-bot-api/" ><i class="fa fa-file-o"></i>Line機器人API</a>
+      </li>
+    
+      <li>
+        <a href="/eric_profile/2016/07/21/godaddy-ssl-and-nginx-install/" ><i class="fa fa-file-o"></i>go daddy買ssl &amp; Nginx 安裝</a>
+      </li>
+    
+      <li>
         <a href="/eric_profile/2016/07/04/docker-use/" ><i class="fa fa-file-o"></i>docker 基本教學</a>
       </li>
     
       <li>
         <a href="/eric_profile/2016/05/28/spring-boot-web-services/"  title="透過spring boot 快速打造restful web service" ><i class="fa fa-file-o"></i>spring boot 建立 web service</a>
-      </li>
-    
-      <li>
-        <a href="/eric_profile/2016/05/12/common-gradle-use/" ><i class="fa fa-file-o"></i>gradle 基本使用</a>
-      </li>
-    
-      <li>
-        <a href="/eric_profile/2016/05/08/ubuntu-install-nginx/" ><i class="fa fa-file-o"></i>ubuntu上安裝Nginx</a>
-      </li>
-    
-      <li>
-        <a href="/eric_profile/2016/05/01/npm-basic-command-line/" ><i class="fa fa-file-o"></i>npm 基本指令</a>
       </li>
     
   </ul>

@@ -6,19 +6,18 @@
   <meta http-equiv="cache-control" content="no-cache">
   <meta http-equiv="expires" content="0">
   
-  <title>ubuntu上安裝Nginx | Eric Shih blog</title>
+  <title>Line機器人API | Eric Shih blog</title>
   <meta name="author" content="Eric Shih">
   
-  <meta name="description" content="Nginx 介紹
-Nginx 是個 Reverse Proxy Server(反向代理伺服器)，為什麼叫反向代理呢? 因為相對於一般 Proxy Server(正向代理伺服器)做的事剛好相反，用一張圖來解釋(圖片出處)
-
-
-在 ubuntu 上透過 apt-get 安裝 Nginx12$ sudo ">
+  <meta name="description" content="註冊申請Line 機器人
+Line developer 官網 申請機器人帳號
+申請註冊channel後，設定Callback URL，必需要是https而且不能是自行簽署的憑證，還要符合line認可的CA list
+還需在Server IP Whitelist 加上你提供callback url的主">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="ubuntu上安裝Nginx"/>
+  <meta property="og:title" content="Line機器人API"/>
   <meta property="og:site_name" content="Eric Shih blog"/>
 
   
@@ -95,7 +94,7 @@ Nginx 是個 Reverse Proxy Server(反向代理伺服器)，為什麼叫反向代
 
 	
 		<div class="page-header">
-			<h1> ubuntu上安裝Nginx</h1>
+			<h1> Line機器人API</h1>
 		</div>
 	
 
@@ -112,28 +111,17 @@ Nginx 是個 Reverse Proxy Server(反向代理伺服器)，為什麼叫反向代
 	<div class="mypage">		
 	  		
 
-	  <h3 id="Nginx-介紹"><a href="#Nginx-介紹" class="headerlink" title="Nginx 介紹"></a>Nginx 介紹</h3><ul>
-<li>Nginx 是個 Reverse Proxy Server(反向代理伺服器)，為什麼叫反向代理呢? 因為相對於一般 Proxy Server(正向代理伺服器)做的事剛好相反，用一張圖來解釋<a href="https://www.zhihu.com/question/24723688" target="_blank" rel="external">(圖片出處)</a><img src="/eric_profile/2016/05/08/ubuntu-install-nginx/proxy_server.jpg" alt="proxy_server.jpg" title="">
-</li>
+	  <h3 id="註冊申請Line-機器人"><a href="#註冊申請Line-機器人" class="headerlink" title="註冊申請Line 機器人"></a>註冊申請Line 機器人</h3><ul>
+<li><a href="https://developers.line.me/bot-api/overview" target="_blank" rel="external">Line developer 官網</a> 申請機器人帳號</li>
+<li>申請註冊channel後，設定<code>Callback URL</code>，必需要是<code>https</code>而且不能是自行簽署的憑證，還要符合line認可的<a href="https://developers.line.me/wp-content/uploads/2016/04/ca_root.txt" target="_blank" rel="external">CA list</a></li>
+<li>還需在<code>Server IP Whitelist</code> 加上你提供callback url的主機ip</li>
+<li>取得API需使用的三組代碼<code>Channel ID</code> <code>Channel Secret</code> <code>MID</code></li>
 </ul>
-<h3 id="在-ubuntu-上透過-apt-get-安裝-Nginx"><a href="#在-ubuntu-上透過-apt-get-安裝-Nginx" class="headerlink" title="在 ubuntu 上透過 apt-get 安裝 Nginx"></a>在 ubuntu 上透過 apt-get 安裝 Nginx</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install nginx</span><br></pre></td></tr></table></figure>
-<h3 id="Nginx-設定"><a href="#Nginx-設定" class="headerlink" title="Nginx 設定"></a>Nginx 設定</h3><ul>
-<li>基本的配置文件都在 <code>/etc/nginx</code> 路徑底下</li>
-<li>主要的置文件 <code>/etc/nginx/sites-available/default</code></li>
+<h3 id="開始撰寫機器人程式"><a href="#開始撰寫機器人程式" class="headerlink" title="開始撰寫機器人程式"></a>開始撰寫機器人程式</h3><ul>
+<li>推薦使用<a href="https://github.com/line/line-bot-sdk-java" target="_blank" rel="external">java sdk</a></li>
 </ul>
-<h3 id="Nginx-command-line"><a href="#Nginx-command-line" class="headerlink" title="Nginx command line"></a>Nginx command line</h3><ul>
-<li><p>start</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service nginx start</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>stop</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service nginx stop</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>restart</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service nginx restart</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>重新讀取配置文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service nginx <span class="_">-s</span> reload</span><br></pre></td></tr></table></figure>
-</li>
+<h3 id="個人github-sample"><a href="#個人github-sample" class="headerlink" title="個人github sample"></a>個人github sample</h3><ul>
+<li>(<a href="https://github.com/force416/linebot" target="_blank" rel="external">https://github.com/force416/linebot</a>)</li>
 </ul>
 	  
 	</div>
@@ -144,13 +132,13 @@ Nginx 是個 Reverse Proxy Server(反向代理伺服器)，為什麼叫反向代
 
     
     
-    <a href="/eric_profile/2016/05/12/common-gradle-use/" type="button" class="btn btn-default"><i
+    <a href="/eric_profile/2016/07/28/implement-linkedlist-in-java/" type="button" class="btn btn-default"><i
                 class="fa fa-arrow-circle-o-left"></i> Prev</a>
     
 
     <a href="/eric_profile/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
     
-    <a href="/eric_profile/2016/05/01/npm-basic-command-line/" type="button" class="btn btn-default ">Next<i
+    <a href="/eric_profile/2016/07/21/godaddy-ssl-and-nginx-install/" type="button" class="btn btn-default ">Next<i
                 class="fa fa-arrow-circle-o-right"></i></a>
     
 
@@ -167,7 +155,7 @@ Nginx 是個 Reverse Proxy Server(反向代理伺服器)，為什麼叫反向代
 
     
 
-<div class="fb-comments" data-href="http://force416.github.io/eric_profile/2016/05/08/ubuntu-install-nginx/" data-width="850px"  data-numposts="5"></div>
+<div class="fb-comments" data-href="http://force416.github.io/eric_profile/2016/07/28/line-bot-api/" data-width="850px"  data-numposts="5"></div>
 
 </section>
 
@@ -182,7 +170,7 @@ Nginx 是個 Reverse Proxy Server(反向代理伺服器)，為什麼叫反向代
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2016-05-08 
+	2016-07-28 
 	</div>
 	
 
@@ -193,7 +181,7 @@ Nginx 是個 Reverse Proxy Server(反向代理伺服器)，為什麼叫反向代
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/eric_profile/categories/ubuntu/">ubuntu<span>3</span></a></li>
+    <li><a href="/eric_profile/categories/Java/">Java<span>1</span></a></li>
   </li>
 
     </ul>
@@ -201,6 +189,14 @@ Nginx 是個 Reverse Proxy Server(反向代理伺服器)，為什麼叫反向代
 	
 
 	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/eric_profile/tags/Line/">Line<span>1</span></a></li>
+    </ul>
+	</div>
 		
 
 	<!-- toc -->
@@ -209,7 +205,7 @@ Nginx 是個 Reverse Proxy Server(反向代理伺服器)，為什麼叫反向代
 	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
 	   <div id="toc" class="toc collapse in">
 		   <span class="toc-title">Contents</span>
-			<ol class="toc-article"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Nginx-介紹"><span class="toc-article-text">Nginx 介紹</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#在-ubuntu-上透過-apt-get-安裝-Nginx"><span class="toc-article-text">在 ubuntu 上透過 apt-get 安裝 Nginx</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Nginx-設定"><span class="toc-article-text">Nginx 設定</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Nginx-command-line"><span class="toc-article-text">Nginx command line</span></a></li></ol>
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#註冊申請Line-機器人"><span class="toc-article-text">註冊申請Line 機器人</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#開始撰寫機器人程式"><span class="toc-article-text">開始撰寫機器人程式</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#個人github-sample"><span class="toc-article-text">個人github sample</span></a></li></ol>
 		</div>
 	
 	</div>

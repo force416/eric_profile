@@ -1,0 +1,371 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>Page 2 | Eric Shih blog</title>
+  <meta name="author" content="Eric Shih">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="Eric Shih blog"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+  
+    <link href="/eric_profile/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/eric_profile/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/eric_profile/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/eric_profile/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/eric_profile/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/eric_profile/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/eric_profile/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/eric_profile/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+
+
+<!-- fb SDK -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.6&appId=889550541191471";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+</head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/eric_profile/">Eric Shih blog</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/eric_profile/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/eric_profile/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 <div class="page-header logo">
+  <h1>艾瑞克說:____<span class="blink-fast">∎</span></h1>
+</div>
+
+<div class="row page">
+
+	
+	<div class="col-md-9">
+	
+
+		<div class="slogan">
+      <i class="fa fa-heart blink-slow"></i>
+      The more I learn, the more I realize how much I don&#39;t know.
+</div>    
+		<div id="top_search"></div>
+		<div class="mypage">
+		
+		<!-- title and entry -->
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/eric_profile/2016/04/26/fb_comments/" title="如何套用facebook comments的功能">hexo套用fb的comments</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2016-04-26  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<h3 id="申請fb開發者應用程式ID"><a href="#申請fb開發者應用程式ID" class="headerlink" title="申請fb開發者應用程式ID"></a>申請fb開發者應用程式ID</h3><ul>
+<li>上fb的<a href="https://developers.facebook.com/" target="_blank" rel="external">開發者網站</a>的官網註冊應用程式網站</li>
+</ul>
+<h3 id="套用至網站"><a href="#套用至網站" class="headerlink" title="套用至網站"></a>套用至網站</h3><ul>
+<li>上 <a href="https://developers.facebook.com/docs/plugins/embedded-comments" target="_blank" rel="external">fb embedded comments</a> 取得內嵌程式的code</li>
+<li><p>貼入<code>&lt;header /&gt;</code>裡</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"fb-root"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;script&gt;(<span class="function"><span class="keyword">function</span>(<span class="params">d, s, id</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> js, fjs = d.getElementsByTagName(s)[<span class="number">0</span>];</span><br><span class="line">  <span class="keyword">if</span> (d.getElementById(id)) <span class="keyword">return</span>;</span><br><span class="line">  js = d.createElement(s); js.id = id;</span><br><span class="line">  js.src = <span class="string">"//connect.facebook.net/zh_TW/sdk.js#xfbml=1&amp;version=v2.6&amp;appId=8"</span>;</span><br><span class="line">  fjs.parentNode.insertBefore(js, fjs);</span><br><span class="line">&#125;(<span class="built_in">document</span>, <span class="string">'script'</span>, <span class="string">'facebook-jssdk'</span>));&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>貼入想呈現留言區塊的地方</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"fb-comment-embed"</span> data-href=<span class="string">"https://www.facebook.com/zuck/posts/1000000000?comment_id=1000000000&amp;amp;reply_comment_id=6500000000"</span> data-width=<span class="string">"560"</span> data-include-parent=<span class="string">"false"</span>&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="開始使用"><a href="#開始使用" class="headerlink" title="開始使用"></a>開始使用</h3>
+	
+	</div>
+  <a type="button" href="/eric_profile/2016/04/26/fb_comments/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/eric_profile/2016/04/26/deployHexoToGithub/" title="這篇是在講如何在github的靜態頁面上架設hexo blog framework">在github上架設hexo</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2016-04-26  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<h3 id="申請github帳號"><a href="#申請github帳號" class="headerlink" title="申請github帳號"></a>申請github帳號</h3><h3 id="install-nodejs"><a href="#install-nodejs" class="headerlink" title="install nodejs"></a>install nodejs</h3><ul>
+<li>上<a href="https://nodejs.org/en/" target="_blank" rel="external">nodejs</a>的官網下載並安裝</li>
+</ul>
+<h3 id="npm-install-hexo"><a href="#npm-install-hexo" class="headerlink" title="npm install hexo"></a>npm install hexo</h3><ul>
+<li>上<a href="https://hexo.io/zh-tw/" target="_blank" rel="external">hexo</a>的官網有安裝教學</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br><span class="line">$ hexo init blog</span><br><span class="line">$ <span class="built_in">cd</span> blog</span><br><span class="line">$ npm install</span><br><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="在github上建立repositories"><a href="#在github上建立repositories" class="headerlink" title="在github上建立repositories"></a>在github上建立repositories</h3><ul>
+<li>建立的專案名稱eric_profile</li>
+</ul>
+<h3 id="將專案發佈上github-page"><a href="#將專案發佈上github-page" class="headerlink" title="將專案發佈上github page"></a>將專案發佈上github page</h3><ul>
+<li>到該專案的<code>settings</code>設定<code>github pages</code>點選<code>launch automatic page generaotr</code> 一路照預設的點next</li>
+<li>建立完後會建立 branch 為<code>gh-pages</code>，只有在這個branch下的才會在github pages上顯示，網址是<a href="https://username.github.io/eric_profile/" target="_blank" rel="external">https://username.github.io/eric_profile/</a></li>
+</ul>
+<h3 id="設定hexo-deploy-to-github"><a href="#設定hexo-deploy-to-github" class="headerlink" title="設定hexo deploy to github"></a>設定hexo deploy to github</h3><ul>
+<li>修改 <code>_config.yml</code> 設定deploy git 資訊</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">	type: git</span><br><span class="line">	repository: git@github.com:force416/eric_profile.git</span><br><span class="line">	branch: gh-pages</span><br></pre></td></tr></table></figure>
+<h3 id="產生檔案-amp-deploy"><a href="#產生檔案-amp-deploy" class="headerlink" title="產生檔案 &amp; deploy"></a>產生檔案 &amp; deploy</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+	
+	</div>
+  <a type="button" href="/eric_profile/2016/04/26/deployHexoToGithub/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+
+		</div>
+
+		<!-- pagination -->
+		<div>
+  		<center>
+		<div class="pagination">
+
+   
+    
+     <a href="/eric_profile/" type="button" class="btn btn-default"><i class="fa fa-arrow-circle-o-left"></i> Prev</a>
+      
+
+        <a href="/eric_profile/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+ 
+          <a type="button" class="btn btn-default disabled">Next<i class="fa fa-arrow-circle-o-right"></i></a>
+        
+
+  
+</div>
+
+  		</center>
+		</div>
+
+		
+		
+	</div> <!-- col-md-9 -->
+
+	
+		<div class="col-md-3">
+	<div id="sidebar">
+	
+			
+	<div class="widget">
+		<h4>Categories</h4>
+		<ul class="tag_box inline list-unstyled">
+		
+			<li><a href="/eric_profile/categories/Java/">Java<span>1</span></a></li>
+		
+			<li><a href="/eric_profile/categories/docker/">docker<span>1</span></a></li>
+		
+			<li><a href="/eric_profile/categories/github/">github<span>1</span></a></li>
+		
+			<li><a href="/eric_profile/categories/hexo/">hexo<span>1</span></a></li>
+		
+			<li><a href="/eric_profile/categories/java/">java<span>1</span></a></li>
+		
+			<li><a href="/eric_profile/categories/mysql/">mysql<span>1</span></a></li>
+		
+			<li><a href="/eric_profile/categories/node-js/">node.js<span>1</span></a></li>
+		
+			<li><a href="/eric_profile/categories/spring-boot/">spring boot<span>1</span></a></li>
+		
+			<li><a href="/eric_profile/categories/ubuntu/">ubuntu<span>3</span></a></li>
+		
+		</ul>
+	</div>
+
+		
+			
+	<div class="widget">
+		<h4>Tag Cloud</h4>
+		<ul class="tag_box inline list-unstyled">		
+		
+			<li><a href="/eric_profile/tags/SSL/">SSL<span>2</span></a></li>
+		
+			<li><a href="/eric_profile/tags/web-service/">web service<span>1</span></a></li>
+		
+			<li><a href="/eric_profile/tags/hexo/">hexo<span>2</span></a></li>
+		
+			<li><a href="/eric_profile/tags/facebook-comments/">facebook comments<span>1</span></a></li>
+		
+			<li><a href="/eric_profile/tags/mysql/">mysql<span>1</span></a></li>
+		
+			<li><a href="/eric_profile/tags/java/">java<span>1</span></a></li>
+		
+			<li><a href="/eric_profile/tags/gradle/">gradle<span>1</span></a></li>
+		
+			<li><a href="/eric_profile/tags/github/">github<span>1</span></a></li>
+		
+			<li><a href="/eric_profile/tags/ubuntu/">ubuntu<span>2</span></a></li>
+		
+			<li><a href="/eric_profile/tags/npm/">npm<span>1</span></a></li>
+		
+			<li><a href="/eric_profile/tags/Line/">Line<span>1</span></a></li>
+		
+			<li><a href="/eric_profile/tags/https/">https<span>1</span></a></li>
+		
+			<li><a href="/eric_profile/tags/nginx/">nginx<span>2</span></a></li>
+		
+		 
+		</ul>
+	</div>
+
+
+		
+			
+<div class="widget">
+  <h4>Recent Posts</h4>
+  <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/eric_profile/2016/07/28/implement-linkedlist-in-java/" ><i class="fa fa-file-o"></i>implement-linkedlist-in-java</a>
+      </li>
+    
+      <li>
+        <a href="/eric_profile/2016/07/28/line-bot-api/" ><i class="fa fa-file-o"></i>Line機器人API</a>
+      </li>
+    
+      <li>
+        <a href="/eric_profile/2016/07/21/godaddy-ssl-and-nginx-install/" ><i class="fa fa-file-o"></i>go daddy買ssl &amp; Nginx 安裝</a>
+      </li>
+    
+      <li>
+        <a href="/eric_profile/2016/07/04/docker-use/" ><i class="fa fa-file-o"></i>docker 基本教學</a>
+      </li>
+    
+      <li>
+        <a href="/eric_profile/2016/05/28/spring-boot-web-services/"  title="透過spring boot 快速打造restful web service" ><i class="fa fa-file-o"></i>spring boot 建立 web service</a>
+      </li>
+    
+  </ul>
+</div>
+
+		
+			
+<div class="widget">
+	<h4>Links</h4>
+	<ul class="blogroll list-unstyled">
+	
+		<li><i class=""></i><a href="http://www.github.com/force416" title="My Github account." target="_blank"]);">My Github</a></li>
+	
+	</ul>
+</div>
+
+
+		
+	</div> <!-- sidebar -->
+</div> <!-- col-md-3 -->
+
+	
+	
+</div> <!-- row-fluid -->
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2016 Eric Shih
+  
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a>,<a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>,<a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a> and <a href="http://getbootstrap.com/" target="_blank">BOOTSTRA.386</a>. 
+     <br> Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind.386</a>.    
+</p>
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/eric_profile/js/jquery.imagesloaded.min.js"></script>
+<script src="/eric_profile/js/gallery.js"></script>
+<script src="/eric_profile/js/bootstrap.min.js"></script>
+<script src="/eric_profile/js/main.js"></script>
+<script src="/eric_profile/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/eric_profile/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/eric_profile/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+</body>
+   </html>
