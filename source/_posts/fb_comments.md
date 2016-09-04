@@ -14,7 +14,7 @@ description: 如何套用facebook comments的功能
 
 ### 套用至網站
 * 上 [fb embedded comments](https://developers.facebook.com/docs/plugins/embedded-comments) 取得內嵌程式的code
-* 貼入`<header />`裡
+* 貼入`<body />`裡
 ```javascript
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -28,7 +28,7 @@ description: 如何套用facebook comments的功能
 
 * 貼入想呈現留言區塊的地方
 ```javascript
-<div class="fb-comment-embed" data-href="https://www.facebook.com/zuck/posts/1000000000?comment_id=1000000000&amp;reply_comment_id=6500000000" data-width="560" data-include-parent="false"></div>
+<div class="fb-comment-embed" data-href="${抓取目前文章的網址}" data-width="560" data-include-parent="false"></div>
 ```
 
 ### 開始使用
