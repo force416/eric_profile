@@ -1,10 +1,14 @@
 ---
-title: webpack 介紹與使用
+title: Webpack 介紹與使用
 toc: true
 comments: true
 date: 2017-05-04 21:35:49
 description:
-tags: webpack
+tags: 
+ - webpack
+ - npm
+ - commonjs
+ - amd
 categories: webpack
 ---
 Webpack 一開始是基於幫助 `React` 開發和模組管理的工具，也是目前功能最為强大的前端模組管理和打包工具，不只適用於 ReatJs，愈來愈多前端專案也是透過webpack進行打包與管理，使用這個工具前最好先暸解 `CommonJS` 與 `AMD` 關於JavaScript的兩大模組管理規範，
@@ -24,7 +28,7 @@ http.createServer((req, res) => {
 ```
 ## AMD
 
-'AMD' 是定義模組非同步加載，`RequireJS`就是基於`AMD`的規範，
+`AMD` 是定義模組非同步加載，`RequireJS`就是基於`AMD`的規範，
 
 ```javaScript
 //定義模組 test.js
@@ -46,7 +50,7 @@ requirejs(['test'], function( test ) {
 ```
 ## NPM
 
-随着`npm`成為主流的 `JavaScript` 套件發佈平台，很多前端專案都依賴於 `npm` 上的套件，或者透過`npm`發佈套件，透過 `webpack`可以直接在前端的程式碼中直接引用`npm`的套件。
+全名是 Node Package Manager，原本目的是`node.js`管理工具，隨著`npm`成為主流的 `JavaScript` 套件發佈平台，很多前端專案都依賴於 `npm` 上的套件，或者透過`npm`發佈套件，透過 `webpack`可以直接在前端的程式碼中直接引用`npm`的套件。
 
 ## Webpack
 
